@@ -4,24 +4,85 @@
     background-color: #DDDAEF;
     color: #28104E;
     font-family: 'League Spartan', sans-serif;
+    box-sizing: border-box;
 }
 
 .header {
     display: flex;
     width: 100%;
+    background-color: white;
     border: 2px black solid;
     border-radius: 10px;
     box-shadow: 2px 3px 8px #28104E;
-    
+}
+
+.header-title, .add-book-btn {
+    background-color: white;
 }
 
 .header-container {
+    background-color: white;
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin: 0px 10px;
+    margin: 0px 15px;
 }
 
 .add-book-btn {
+    border: none;
+}
+
+.main {
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 10px 5px;
+    background-color: white;
+    box-shadow: 2px 3px 8px #28104E;
+}
+
+.book-list {
+    margin: 20px 5px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.card {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5px;
+    padding: 0px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #DDDAEF;
+    box-shadow: 1px 1px 2px black;
+    text-align: center;
+}
+
+.book-info {
+    color: #28104E;
+    border-right: 1px solid black;
+    margin: 20px 5px;
+}
+
+.card-read-status {
+    width: 10%;
+}
+
+.card-title {
+    width: 40%;
+}
+
+.card-author {
+    width: 35%;
+}
+
+.card-pages {
+    width: 10%;
+}
+
+.card-delete-btn {
+    width: 5%;
     border: none;
 }
