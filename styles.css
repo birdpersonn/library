@@ -86,3 +86,19 @@
     width: 5%;
     border: none;
 }
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.footer-gh-link {
+    text-decoration: none;
+}
+
+button:hover, a:hover {
+    color: #CC5500;
+    cursor: pointer;
+}
