@@ -106,3 +106,12 @@ button:hover, a:hover {
     color: #CC5500;
     cursor: pointer;
 }
+
+.card-read-status select option {
+    text-align: center;
+}
+
+.card-read-status select {
+    border: none;
+    text-decoration: none;
+}
