@@ -63,7 +63,11 @@
 .book-info {
     color: #28104E;
     border-right: 1px solid black;
-    margin: 20px 5px;
+    padding: 5px 15px;
+}
+
+.card:hover {
+    transform: translate(-3px);
 }
 
 .card-read-status {
@@ -75,11 +79,11 @@
 }
 
 .card-author {
-    width: 35%;
+    width: 30%;
 }
 
 .card-pages {
-    width: 10%;
+    width: 15%;
 }
 
 .card-delete-btn {
