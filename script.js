@@ -103,7 +103,7 @@ function setUpReadStatusSelectors() {
     readStatusSelectors.forEach((selector) => {
         selector.addEventListener("change", () => {
             library[selector.data].readStatus = selector.value;
-            console.log(library);
+            displayLibrary();
         })
     })
 }
@@ -114,7 +114,6 @@ function setUpReadStatusSelectors() {
         const cardDeleteBtns = document.querySelectorAll('.card-delete-btn');
         console.log(cardDeleteBtns);
         cardDeleteBtns.forEach((btn) => {
-            console.log("hi")
             btn.addEventListener("click", () => {
                 library.splice(btn.data, 1);
                 displayLibrary();
@@ -123,9 +122,9 @@ function setUpReadStatusSelectors() {
     }
 
 /* testing */
-addBook("boosh", "noel fielding", 420, "read");
+/*addBook("boosh", "noel fielding", 42, "read");
 addBook("picture of dorian gray", "oscar wilde", 288, "reading");
-addBook("fake book", "fake author", 56, "not read");
+addBook("fake book", "fake author", 560, "not read");
 const boosh = new Book("boosh", "noel fielding", 420, "read");
 //deleteBook(boosh);
-displayLibrary();
+displayLibrary();*/

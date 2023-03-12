@@ -16,48 +16,32 @@
       </div>
     </header>
     <main class="main">
-      <div id="book-list" class="book-list">
-        <!--- fake card for styling -->
-        <div class="card">
-          <p class="card-title book-info">picture of dorian gray</p>
-          <p class="card-author book-info">oscar wilde</p>
-          <p class="card-pages book-info">234</p>
-          <p class="card-read-status book-info">read</p>
-          <button class="card-delete-btn book-info">X</button>
-        </div>
-        <div class="card">
-          <p class="card-title book-info">fake book</p>
-          <p class="card-author book-info">faux author</p>
-          <p class="card-pages book-info">2342367</p>
-          <p class="card-read-status book-info">not read</p>
-          <button class="card-delete-btn book-info">X</button>
-        </div>
-        <div class="card">
-          <p class="card-title book-info">
-            a really long book title that spans multiple lines and shows what
-            the table would look like if a card spanned at least 2 lines
-          </p>
-          <p class="card-author book-info">a long author name for science</p>
-          <p class="card-pages book-info">234</p>
-          <p class="card-read-status book-info">read</p>
-          <button class="card-delete-btn book-info">X</button>
-        </div>
-        <div class="card">
-          <p class="card-title book-info">title</p>
-          <p class="card-author book-info">author</p>
-          <p class="card-pages book-info">4</p>
-          <p class="card-read-status book-info">reading</p>
-          <button class="card-delete-btn book-info">X</button>
-        </div>
-        <div class="card">
-          <p class="card-title book-info">title</p>
-          <p class="card-author book-info">author</p>
-          <p class="card-pages book-info">4</p>
-          <p class="card-read-status book-info">not read</p>
-          <button class="card-delete-btn book-info">X</button>
-        </div>
-      </div>
+      <div id="book-list" class="book-list"></div>
     </main>
+    <section class="add-book-modal active">
+      <form id="add-book-form" class="add-book-form">
+        <a class="form-close-btn" href="#">X</a>
+        <fieldset id="form-fieldset" class="form-fieldset">
+          <label for="title">title</label>
+          <input type="text" name="title" id="form-title" />
+
+          <label for="author">author</label>
+          <input type="text" name="author" id="form-author" />
+
+          <label for="pages">pages</label>
+          <input type="number" name="pages" id="form-pages" />
+
+          <label for="read-status">status</label>
+          <select name="read-status" id="form-read-status-selector">
+            <option value="read">read</option>
+            <option value="not read">not read</option>
+            <option value="reading">reading</option>
+          </select>
+
+          <button class="form-submit-btn" type="submit">add book</button>
+        </fieldset>
+      </form>
+    </section>
   </body>
   <footer class="footer">
     <p class="footer-text">

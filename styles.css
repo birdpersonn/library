@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
 
-* {
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
     background-color: #DDDAEF;
     color: #28104E;
     font-family: 'League Spartan', sans-serif;
@@ -9,7 +12,7 @@
 
 .header {
     display: flex;
-    width: 100%;
+    margin: 10px 15px;
     background-color: white;
     border: 2px black solid;
     border-radius: 10px;
@@ -105,6 +108,7 @@
 button:hover, a:hover {
     color: #CC5500;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .card-read-status select option {
@@ -114,4 +118,76 @@ button:hover, a:hover {
 .card-read-status select {
     border: none;
     text-decoration: none;
+}
+
+/**** FORM AND MODAL ****/
+.add-book-modal {
+    position: fixed;
+    background-color: hsla(0, 0%, 0%,40%);
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.add-book-modal.active {
+    display: flex;
+}
+
+.add-book-form {
+    position: relative;
+    background-color: hsla(0, 0%, 100%, 100%);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: min-content;
+    z-index: 2;
+    border-radius: 1rem;
+    border: 2px solid black;
+    border-radius: 15px;
+    box-shadow: 2px 3px 8px #28104E;
+    width: min-content;
+    background-color: white;
+}
+
+.form-close-btn {
+    position: absolute;
+    text-decoration: none;
+    color: #28104E;
+    align-self: flex-end;
+}
+
+.form-fieldset {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    border: none;
+}
+
+.form-fieldset input,
+.form-fieldset select {
+    margin: 5px 0px 20px 0px;
+    border: 1px solid #28104E;
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px #28104E;
+    color: #28104E;
+    font-weight: bold;
+    height: 1.2rem;
+}
+
+.form-submit-btn {
+    border: 1px solid #28104E;
+    border-radius: 10px;
+    box-shadow: 1px 2px 5px #28104E;
+    background-color: white;
+    color: #28104E;
+    font-weight: bold;
+}
+
+.form-submit-btn:hover {
+    background-color: #DDDAEF;
+    color: #28104E;
+    transform: scale(1.05);
 }
