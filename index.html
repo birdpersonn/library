@@ -12,15 +12,15 @@
     <header class="header">
       <div class="header-container">
         <h1 class="header-title">library</h1>
-        <button class="add-book-btn">+ add</button>
+        <button id="add-book-btn" class="add-book-btn">+ add</button>
       </div>
     </header>
     <main class="main">
       <div id="book-list" class="book-list"></div>
     </main>
-    <section class="add-book-modal active">
+    <section id="add-book-modal" class="add-book-modal">
       <form id="add-book-form" class="add-book-form">
-        <a class="form-close-btn" href="#">X</a>
+        <a id="modal-close-btn" class="modal-close-btn" href="#">x</a>
         <fieldset id="form-fieldset" class="form-fieldset">
           <label for="title">title</label>
           <input type="text" name="title" id="form-title" />
@@ -32,7 +32,7 @@
           <input type="number" name="pages" id="form-pages" />
 
           <label for="read-status">status</label>
-          <select name="read-status" id="form-read-status-selector">
+          <select name="read-status" id="form-read-status">
             <option value="read">read</option>
             <option value="not read">not read</option>
             <option value="reading">reading</option>

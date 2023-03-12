@@ -33,12 +33,13 @@ body {
 
 .add-book-btn {
     border: none;
+    font-weight: bold;
 }
 
 .main {
     border: 2px solid black;
     border-radius: 10px;
-    margin: 10px 5px;
+    margin: 10px 15px;
     background-color: white;
     box-shadow: 2px 3px 8px #28104E;
 }
@@ -92,6 +93,8 @@ body {
 .card-delete-btn {
     width: 5%;
     border: none;
+    background-color: #DDDAEF;
+    font-weight: bold;
 }
 
 .footer {
@@ -118,6 +121,8 @@ button:hover, a:hover {
 .card-read-status select {
     border: none;
     text-decoration: none;
+    background-color: #DDDAEF;
+    font-weight: bold;
 }
 
 /**** FORM AND MODAL ****/
@@ -138,10 +143,10 @@ button:hover, a:hover {
 
 .add-book-form {
     position: relative;
-    background-color: hsla(0, 0%, 100%, 100%);
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    background-color: #DDDAEF;
+    padding: 10px;
     width: min-content;
     z-index: 2;
     border-radius: 1rem;
@@ -149,10 +154,9 @@ button:hover, a:hover {
     border-radius: 15px;
     box-shadow: 2px 3px 8px #28104E;
     width: min-content;
-    background-color: white;
 }
 
-.form-close-btn {
+.modal-close-btn {
     position: absolute;
     text-decoration: none;
     color: #28104E;
@@ -177,6 +181,10 @@ button:hover, a:hover {
     height: 1.2rem;
 }
 
+.form-fieldset select {
+    height: 1.5rem;
+}
+
 .form-submit-btn {
     border: 1px solid #28104E;
     border-radius: 10px;
@@ -184,10 +192,13 @@ button:hover, a:hover {
     background-color: white;
     color: #28104E;
     font-weight: bold;
+    transition: ease 0.2s;
 }
 
 .form-submit-btn:hover {
-    background-color: #DDDAEF;
-    color: #28104E;
+    background-color: white;
+    color: #CC5500;
+    border-color: #CC5500;
     transform: scale(1.05);
+    box-shadow: 1px 2px 5px #CC5500;
 }

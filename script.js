@@ -87,7 +87,7 @@ function displayLibrary() {
         const cardDeleteBtn = document.createElement('button');
         cardDeleteBtn.classList.add("card-delete-btn", "book-info");
         cardDeleteBtn.data = index;
-        cardDeleteBtn.innerText = 'X';
+        cardDeleteBtn.innerText = 'x';
         newCardDiv.append(cardDeleteBtn);
 
         // add card to book list div
@@ -110,21 +110,43 @@ function setUpReadStatusSelectors() {
 
 /* add event listeners to all delete card buttons;
     removes book from library and updates book list on page */
-    function setUpCardDeleteButtons() {
-        const cardDeleteBtns = document.querySelectorAll('.card-delete-btn');
-        console.log(cardDeleteBtns);
-        cardDeleteBtns.forEach((btn) => {
-            btn.addEventListener("click", () => {
-                library.splice(btn.data, 1);
-                displayLibrary();
-            })
+function setUpCardDeleteButtons() {
+    const cardDeleteBtns = document.querySelectorAll('.card-delete-btn');
+    console.log(cardDeleteBtns);
+    cardDeleteBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            library.splice(btn.data, 1);
+            displayLibrary();
         })
-    }
+    })
+}
+
+/* add event listener to add book button */
+const addBookBtn = document.querySelector('#add-book-btn');
+addBookBtn.addEventListener("click", () => {
+    const addBookModal = document.querySelector("#add-book-modal");
+    addBookModal.classList.add('active');
+})
+
+/* add event listener to close modal button */
+const closeModalBtn = document.querySelector("#modal-close-btn");
+closeModalBtn.addEventListener("click", () => {
+    const addBookModal = document.querySelector("#add-book-modal");
+    addBookModal.classList.remove("active");
+    clearInputs();
+})
+
+/* clear inputs in add book form */
+function clearInputs() {
+    document.querySelector("#form-title").value = '';
+    document.querySelector('#form-author').value = '';
+    document.querySelector('#form-pages').value = '';
+}
 
 /* testing */
-/*addBook("boosh", "noel fielding", 42, "read");
+addBook("weapons of math destruction", "cathy o'neil", 274, "read");
 addBook("picture of dorian gray", "oscar wilde", 288, "reading");
 addBook("fake book", "fake author", 560, "not read");
 const boosh = new Book("boosh", "noel fielding", 420, "read");
 //deleteBook(boosh);
-displayLibrary();*/
+displayLibrary();
