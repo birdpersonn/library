@@ -57,10 +57,10 @@ body {
     align-items: center;
     margin: 5px;
     padding: 0px;
-    border: 1px solid black;
+    border: 1px solid #28104E;
     border-radius: 5px;
     background-color: #DDDAEF;
-    box-shadow: 1px 1px 2px black;
+    box-shadow: 1px 1px 2px #28104E;
     text-align: center;
 }
 
@@ -72,6 +72,8 @@ body {
 
 .card:hover {
     transform: translate(-3px);
+    box-shadow: 1px 1px 2px #CC5500;
+    border-color: #CC5500;
 }
 
 .card-read-status {
@@ -161,6 +163,7 @@ button:hover, a:hover {
     text-decoration: none;
     color: #28104E;
     align-self: flex-end;
+    margin: 5px;
 }
 
 .form-fieldset {
@@ -168,6 +171,10 @@ button:hover, a:hover {
     flex-direction: column;
     margin: 10px;
     border: none;
+}
+
+.form-fieldset label {
+    font-size: 1.1rem;
 }
 
 .form-fieldset input,

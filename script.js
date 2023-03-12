@@ -65,7 +65,6 @@ function displayLibrary() {
         const cardReadStatusSelector = document.createElement('select');
         cardReadStatusSelector.data = index;
         cardReadStatusSelector.classList.add("read-status-selector");
-        console.log(cardReadStatusSelector.data);
         cardReadStatusSelector.name = "read-status";
         const optionRead = document.createElement('option');
         optionRead.value = "read";
@@ -112,7 +111,6 @@ function setUpReadStatusSelectors() {
     removes book from library and updates book list on page */
 function setUpCardDeleteButtons() {
     const cardDeleteBtns = document.querySelectorAll('.card-delete-btn');
-    console.log(cardDeleteBtns);
     cardDeleteBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
             library.splice(btn.data, 1);
@@ -143,10 +141,29 @@ function clearInputs() {
     document.querySelector('#form-pages').value = '';
 }
 
+/* add event listener to form submit button;
+    creates new book with given inputs */
+const addBookForm = document.querySelector('#add-book-form');
+addBookForm.addEventListener("submit", (e) => {
+    const addBookModal = document.querySelector("#add-book-modal");
+    const title = document.querySelector('#form-title').value;
+    const author = document.querySelector('#form-author').value;
+    const pages = document.querySelector('#form-pages').value;
+    const readStatus = document.querySelector('#form-read-status').value;
+    e.preventDefault();
+
+    /* add book to library */
+    addBook(title, author, pages, readStatus);
+
+    addBookModal.classList.remove("active");
+    clearInputs();
+    displayLibrary();
+})
+
 /* testing */
-addBook("weapons of math destruction", "cathy o'neil", 274, "read");
+/*addBook("weapons of math destruction", "cathy o'neil", 274, "read");
 addBook("picture of dorian gray", "oscar wilde", 288, "reading");
 addBook("fake book", "fake author", 560, "not read");
 const boosh = new Book("boosh", "noel fielding", 420, "read");
 //deleteBook(boosh);
-displayLibrary();
+displayLibrary();*/
