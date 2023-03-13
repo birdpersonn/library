@@ -121,13 +121,12 @@ function setUpReadStatusSelectors() {
     readStatusSelectors.forEach((selector) => {
         selector.addEventListener("change", () => {
             library[selector.data].readStatus = selector.value;
-            displayLibrary();
+            displayLibrary(library);
         })
     })
 }
 
 /* add event listener to search bar; updates list with each change*/
-
 const searchQuery = document.querySelector("#search-query");
 searchQuery.addEventListener("input", () => {
     const query = searchQuery.value;
