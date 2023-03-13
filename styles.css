@@ -10,6 +10,10 @@ body {
     box-sizing: border-box;
 }
 
+::placeholder {
+    color: #28104E;
+}
+
 .header {
     display: flex;
     margin: 10px 15px;
@@ -29,6 +33,25 @@ body {
     justify-content: space-between;
     width: 100%;
     margin: 0px 15px;
+}
+.search-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#search-query {
+    border: 2px solid #28104E;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #28104E;
+    border-radius: 15px;
+    box-shadow: 1px 2px 5px #28104E;
+}
+#search-query:focus {
+    outline: none;
+    border: 2px solid #CC5500;
+    box-shadow: 1px 2px 5px #CC5500;
 }
 
 .add-book-btn {
