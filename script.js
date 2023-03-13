@@ -71,12 +71,6 @@ function displayLibrary(library) {
         cardAuthor.innerText = book.author;
         newCardDiv.append(cardAuthor);
 
-        /*// add author button to div
-        const cardAuthor = document.createElement('p');
-        cardAuthor.classList.add("card-author", "book-info");
-        cardAuthor.innerText = book.author;
-        newCardDiv.append(cardAuthor);*/
-
         // add pages to div
         const cardPages = document.createElement('p');
         cardPages.classList.add("card-pages", "book-info");
@@ -117,6 +111,7 @@ function displayLibrary(library) {
         // add card to book list div
         bookListDiv.append(newCardDiv);
     })
+    setUpAuthorLinks();
     setUpCardDeleteButtons();
     setUpReadStatusSelectors();
 }
@@ -139,6 +134,18 @@ searchQuery.addEventListener("input", () => {
     var tempLibrary = library.filter((book) => book.contains(query))
     displayLibrary(tempLibrary);
 })
+
+/* add event listeners to all author links;
+    filters library for books by selected author */
+function setUpAuthorLinks() {
+    const authorLinks = document.querySelectorAll('.card-author');
+    authorLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            const tempLibrary = library.filter((book) => book.author === link.textContent);
+            displayLibrary(tempLibrary);
+        })
+    })
+}
 
 /* add event listeners to all delete card buttons;
     removes book from library and updates book list on page */
