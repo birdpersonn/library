@@ -108,7 +108,14 @@ body {
 }
 
 .card-author {
+    margin: 0px;
     width: 30%;
+    background-color: #DDDAEF;
+    border: none;
+    border-right: 1px solid black;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'League Spartan', sans-serif;
 }
 
 .card-pages {

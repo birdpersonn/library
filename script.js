@@ -65,11 +65,17 @@ function displayLibrary(library) {
         cardTitle.innerText = book.title;
         newCardDiv.append(cardTitle);
 
-        // add author to div
-        const cardAuthor = document.createElement('p');
+        // add author button to div
+        const cardAuthor = document.createElement('button');
         cardAuthor.classList.add("card-author", "book-info");
         cardAuthor.innerText = book.author;
         newCardDiv.append(cardAuthor);
+
+        /*// add author button to div
+        const cardAuthor = document.createElement('p');
+        cardAuthor.classList.add("card-author", "book-info");
+        cardAuthor.innerText = book.author;
+        newCardDiv.append(cardAuthor);*/
 
         // add pages to div
         const cardPages = document.createElement('p');
