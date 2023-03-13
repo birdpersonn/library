@@ -20,6 +20,24 @@ function Book(title, author, pages, readStatus) {
         }
         return false;
     }
+
+    /* checks if the title contains a given string (case-insensitive) */
+    this.titleContains = function(query) {
+        return this.title.toLowerCase().includes(query);
+    }
+
+    /* checks if the title contains a given string (case-insensitive) */
+    this.authorContains = function(query) {
+        return this.author.toLowerCase().includes(query);
+    }
+
+    /* checks if either the title or author contains a given string (case-insensitive)*/
+    this.contains = function(query) {
+        if( this.titleContains(query) || this.authorContains(query)) {
+            return true;
+        }
+        return false;
+    }
 }
 
 /* adds new book to library array */
@@ -33,7 +51,7 @@ function deleteBook(bookToDelete) {
 }
 
 /* creates new card for each book and prints to page */
-function displayLibrary() {
+function displayLibrary(library) {
     const bookListDiv = document.querySelector('#book-list');
     bookListDiv.textContent = '';
     library.forEach((book, index) => {
@@ -97,7 +115,7 @@ function displayLibrary() {
     setUpReadStatusSelectors();
 }
 
-/* adds event listeners to read status selectors; updates read status when changed */
+/* add event listeners to read status selectors; updates read status when changed */
 function setUpReadStatusSelectors() {
     const readStatusSelectors = document.querySelectorAll(".read-status-selector");
     readStatusSelectors.forEach((selector) => {
@@ -108,6 +126,15 @@ function setUpReadStatusSelectors() {
     })
 }
 
+/* add event listener to search bar; updates list with each change*/
+
+const searchQuery = document.querySelector("#search-query");
+searchQuery.addEventListener("input", () => {
+    const query = searchQuery.value;
+    var tempLibrary = library.filter((book) => book.contains(query))
+    displayLibrary(tempLibrary);
+})
+
 /* add event listeners to all delete card buttons;
     removes book from library and updates book list on page */
 function setUpCardDeleteButtons() {
@@ -115,7 +142,7 @@ function setUpCardDeleteButtons() {
     cardDeleteBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
             library.splice(btn.data, 1);
-            displayLibrary();
+            displayLibrary(library);
         })
     })
 }
@@ -158,7 +185,7 @@ addBookForm.addEventListener("submit", (e) => {
 
     addBookModal.classList.remove("active");
     clearInputs();
-    displayLibrary();
+    displayLibrary(library);
 })
 
 /* testing */
@@ -167,4 +194,4 @@ addBook("picture of dorian gray", "oscar wilde", 288, "reading");
 addBook("fake book", "fake author", 560, "not read");
 const boosh = new Book("boosh", "noel fielding", 420, "read");
 //deleteBook(boosh);
-displayLibrary();
+displayLibrary(library);
