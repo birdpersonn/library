@@ -78,6 +78,7 @@ function displayLibrary() {
         optionNotRead.value = "not read";
         optionNotRead.innerText = "not read";
         cardReadStatusSelector.append(optionNotRead);
+        cardReadStatusSelector.value = book.readStatus;
 
         cardReadStatusDiv.append(cardReadStatusSelector);
         newCardDiv.append(cardReadStatusDiv);
@@ -161,9 +162,9 @@ addBookForm.addEventListener("submit", (e) => {
 })
 
 /* testing */
-/*addBook("weapons of math destruction", "cathy o'neil", 274, "read");
+addBook("weapons of math destruction", "cathy o'neil", 274, "read");
 addBook("picture of dorian gray", "oscar wilde", 288, "reading");
 addBook("fake book", "fake author", 560, "not read");
 const boosh = new Book("boosh", "noel fielding", 420, "read");
 //deleteBook(boosh);
-displayLibrary();*/
+displayLibrary();
