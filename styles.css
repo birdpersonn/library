@@ -170,6 +170,16 @@ button:hover, a:hover {
     font-weight: bold;
 }
 
+.empty-library-header {
+    align-self: center;
+}
+
+.empty-library-img {
+    align-self: center;
+    height: 50vh;
+    width: 50vw;
+}
+
 /**** FORM AND MODAL ****/
 .add-book-modal {
     position: fixed;

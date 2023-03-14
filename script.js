@@ -54,66 +54,83 @@ function deleteBook(bookToDelete) {
 function displayLibrary(library) {
     const bookListDiv = document.querySelector('#book-list');
     bookListDiv.textContent = '';
-    library.forEach((book, index) => {
-        // create card div
-        const newCardDiv = document.createElement('div');
-        newCardDiv.classList.add('card');
-
-        // add title to div
-        const cardTitle = document.createElement('p');
-        cardTitle.classList.add('card-title', 'book-info');
-        cardTitle.innerText = book.title;
-        newCardDiv.append(cardTitle);
-
-        // add author button to div
-        const cardAuthor = document.createElement('button');
-        cardAuthor.classList.add("card-author", "book-info");
-        cardAuthor.innerText = book.author;
-        newCardDiv.append(cardAuthor);
-
-        // add pages to div
-        const cardPages = document.createElement('p');
-        cardPages.classList.add("card-pages", "book-info");
-        cardPages.innerText = book.pages;
-        newCardDiv.append(cardPages);
-
-        // add read status selector to div
-        const cardReadStatusDiv = document.createElement('div');
-        cardReadStatusDiv.classList.add("card-read-status", "book-info");
-        const cardReadStatusSelector = document.createElement('select');
-        cardReadStatusSelector.data = index;
-        cardReadStatusSelector.classList.add("read-status-selector");
-        cardReadStatusSelector.name = "read-status";
-        const optionRead = document.createElement('option');
-        optionRead.value = "read";
-        optionRead.innerText = "read";
-        cardReadStatusSelector.append(optionRead);
-        const optionReading = document.createElement('option');
-        optionReading.value = "reading";
-        optionReading.innerText = "reading";
-        cardReadStatusSelector.append(optionReading);
-        const optionNotRead = document.createElement('option');
-        optionNotRead.value = "not read";
-        optionNotRead.innerText = "not read";
-        cardReadStatusSelector.append(optionNotRead);
-        cardReadStatusSelector.value = book.readStatus;
-
-        cardReadStatusDiv.append(cardReadStatusSelector);
-        newCardDiv.append(cardReadStatusDiv);
-
-        // add delete button to div
-        const cardDeleteBtn = document.createElement('button');
-        cardDeleteBtn.classList.add("card-delete-btn", "book-info");
-        cardDeleteBtn.data = index;
-        cardDeleteBtn.innerText = 'x';
-        newCardDiv.append(cardDeleteBtn);
-
-        // add card to book list div
-        bookListDiv.append(newCardDiv);
-    })
-    setUpAuthorLinks();
-    setUpCardDeleteButtons();
-    setUpReadStatusSelectors();
+    if(library.length > 0) {
+        library.forEach((book, index) => {
+            // create card div
+            const newCardDiv = document.createElement('div');
+            newCardDiv.classList.add('card');
+    
+            // add title to div
+            const cardTitle = document.createElement('p');
+            cardTitle.classList.add('card-title', 'book-info');
+            cardTitle.innerText = book.title;
+            newCardDiv.append(cardTitle);
+    
+            // add author button to div
+            const cardAuthor = document.createElement('button');
+            cardAuthor.classList.add("card-author", "book-info");
+            cardAuthor.innerText = book.author;
+            newCardDiv.append(cardAuthor);
+    
+            // add pages to div
+            const cardPages = document.createElement('p');
+            cardPages.classList.add("card-pages", "book-info");
+            cardPages.innerText = book.pages;
+            newCardDiv.append(cardPages);
+    
+            // add read status selector to div
+            const cardReadStatusDiv = document.createElement('div');
+            cardReadStatusDiv.classList.add("card-read-status", "book-info");
+            const cardReadStatusSelector = document.createElement('select');
+            cardReadStatusSelector.data = index;
+            cardReadStatusSelector.classList.add("read-status-selector");
+            cardReadStatusSelector.name = "read-status";
+            const optionRead = document.createElement('option');
+            optionRead.value = "read";
+            optionRead.innerText = "read";
+            cardReadStatusSelector.append(optionRead);
+            const optionReading = document.createElement('option');
+            optionReading.value = "reading";
+            optionReading.innerText = "reading";
+            cardReadStatusSelector.append(optionReading);
+            const optionNotRead = document.createElement('option');
+            optionNotRead.value = "not read";
+            optionNotRead.innerText = "not read";
+            cardReadStatusSelector.append(optionNotRead);
+            cardReadStatusSelector.value = book.readStatus;
+    
+            cardReadStatusDiv.append(cardReadStatusSelector);
+            newCardDiv.append(cardReadStatusDiv);
+    
+            // add delete button to div
+            const cardDeleteBtn = document.createElement('button');
+            cardDeleteBtn.classList.add("card-delete-btn", "book-info");
+            cardDeleteBtn.data = index;
+            cardDeleteBtn.innerText = 'x';
+            newCardDiv.append(cardDeleteBtn);
+    
+            // add card to book list div
+            bookListDiv.append(newCardDiv);
+        })
+        setUpAuthorLinks();
+        setUpCardDeleteButtons();
+        setUpReadStatusSelectors();
+    } else {
+        // empty library
+        // add empty library image
+        const emptyLibraryImg = document.createElement('img');
+        emptyLibraryImg.classList.add('empty-library-img');
+        emptyLibraryImg.src = "./assets/empty-library.svg";
+        
+        // add empty library header
+        const emptyLibraryHeader = document.createElement('h3');
+        emptyLibraryHeader.classList.add('empty-library-header');
+        emptyLibraryHeader.textContent = 'your library is empty, try adding a book!';
+        
+        bookListDiv.append(emptyLibraryImg);
+        bookListDiv.append(emptyLibraryHeader);
+    }
+    
 }
 
 /* add event listeners to read status selectors; updates read status when changed */
