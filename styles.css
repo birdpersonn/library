@@ -255,7 +255,45 @@ button:hover, a:hover {
 
 /****** MOBILE-FRIENDLY ******/
 @media only screen and (max-width: 500px) {
+    .header {
+        height: 3em;
+        margin: 10px 10px;
+    }
+
     #search-query {
         width: 7rem;
-    }    
+        height: .6em;
+    }   
+
+    .main {
+        margin: 0px 10px;
+    }
+    
+    .book-list {
+        margin: 10px 5px;
+    }
+
+    .card {
+        margin: 3px;
+    }
+
+    .book-info {
+        font-size: 12px;
+        padding: 2px 0px;
+        margin: 1px 2px;
+    }
+
+    .card-pages {
+        width: 10%;
+    }
+
+    .card-read-status {
+        width: 20%;
+    }
+
+    select {
+        margin: 0px;
+        width: 6em;
+        font-size: 11px;
+    }
 }
