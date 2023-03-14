@@ -23,12 +23,12 @@ function Book(title, author, pages, readStatus) {
 
     /* checks if the title contains a given string (case-insensitive) */
     this.titleContains = function(query) {
-        return this.title.toLowerCase().includes(query);
+        return this.title.toLowerCase().includes(query.toLowerCase());
     }
 
     /* checks if the title contains a given string (case-insensitive) */
     this.authorContains = function(query) {
-        return this.author.toLowerCase().includes(query);
+        return this.author.toLowerCase().includes(query.toLowerCase());
     }
 
     /* checks if either the title or author contains a given string (case-insensitive)*/

@@ -296,4 +296,8 @@ button:hover, a:hover {
         width: 6em;
         font-size: 11px;
     }
+
+    .form-read-status {
+        width: 40rem;
+    }
 }
