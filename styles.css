@@ -268,6 +268,13 @@ button:hover, a:hover {
         color: #CC5500;
     }
 
+    /* prevent auto-zoom on inputs */
+    select,
+    textarea,
+    input {
+        font-size: 16px;
+    }
+
     #search-query {
         width: 7rem;
         height: .6em;
