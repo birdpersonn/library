@@ -14,16 +14,25 @@ body {
     color: #28104E;
 }
 
+/**** HEADER ****/
 .header {
     display: flex;
     margin: 10px 15px;
+    height: 4rem;
     background-color: white;
     border: 2px black solid;
     border-radius: 10px;
     box-shadow: 2px 3px 8px #28104E;
 }
 
-.header-title, .add-book-btn {
+.header-title {
+    text-decoration: none;
+    background-color: white;
+    font-size: 1.7em;
+    color: #28104E;
+}
+
+.add-book-btn {
     background-color: white;
 }
 
@@ -31,6 +40,7 @@ body {
     background-color: white;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     margin: 0px 15px;
 }
@@ -42,6 +52,7 @@ body {
 #search-query {
     border: 2px solid #28104E;
     padding: 10px 20px;
+    width: 12rem;
     font-size: 15px;
     font-weight: bold;
     color: #28104E;
@@ -59,6 +70,7 @@ body {
     font-weight: bold;
 }
 
+/**** MAIN ****/
 .main {
     border: 2px solid black;
     border-radius: 10px;
@@ -129,6 +141,7 @@ body {
     font-weight: bold;
 }
 
+/**** FOOTER ****/
 .footer {
     position: fixed;
     bottom: 0;
@@ -238,4 +251,12 @@ button:hover, a:hover {
     border-color: #CC5500;
     transform: scale(1.05);
     box-shadow: 1px 2px 5px #CC5500;
+}
+
+
+/****** MOBILE-FRIENDLY ******/
+@media only screen and (max-width: 500px) {
+    #search-query {
+        width: 7rem;
+    }    
 }
