@@ -176,8 +176,8 @@ button:hover, a:hover {
 
 .empty-library-img {
     align-self: center;
-    width: 60vw;
-    height: auto;
+    height: 50vh;
+    width: auto;
 }
 
 /**** FORM AND MODAL ****/
@@ -202,13 +202,12 @@ button:hover, a:hover {
     flex-direction: column;
     background-color: #DDDAEF;
     padding: 10px;
+    margin-top: -10vh;
     width: min-content;
     z-index: 2;
-    border-radius: 1rem;
     border: 2px solid black;
     border-radius: 15px;
     box-shadow: 2px 3px 8px #28104E;
-    width: min-content;
 }
 
 .modal-close-btn {
@@ -320,10 +319,12 @@ button:hover, a:hover {
         margin: 0px;
         width: 6em;
         font-size: 11px;
+        width: 100%;
     }
 
-    select {
-        width: 100%;
+    .empty-library-img {
+        width: 60vw;
+        height: auto;
     }
 
     .form-read-status {
