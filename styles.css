@@ -260,6 +260,14 @@ button:hover, a:hover {
         margin: 10px 10px;
     }
 
+    a, button {
+        color: #28104E;
+    }
+
+    a:hover, button:hover {
+        color: #CC5500;
+    }
+
     #search-query {
         width: 7rem;
         height: .6em;
