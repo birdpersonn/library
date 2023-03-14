@@ -312,7 +312,15 @@ button:hover, a:hover {
         font-size: 11px;
     }
 
+    select {
+        width: 100%;
+    }
+
     .form-read-status {
         width: 40rem;
+    }
+
+    .form-submit-btn {
+        height: 2em;
     }
 }
