@@ -176,8 +176,8 @@ button:hover, a:hover {
 
 .empty-library-img {
     align-self: center;
-    height: 50vh;
-    width: 50vw;
+    width: 60vw;
+    height: auto;
 }
 
 /**** FORM AND MODAL ****/
