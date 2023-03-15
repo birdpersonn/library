@@ -121,7 +121,7 @@ function displayLibrary(library) {
         const emptyLibraryImg = document.createElement('img');
         emptyLibraryImg.classList.add('empty-library-img');
         emptyLibraryImg.src = "./assets/empty-library.svg";
-        
+
         // add empty library header
         const emptyLibraryHeader = document.createElement('h3');
         emptyLibraryHeader.classList.add('empty-library-header');
@@ -221,6 +221,7 @@ addBookForm.addEventListener("submit", (e) => {
 addBook("weapons of math destruction", "cathy o'neil", 274, "read");
 addBook("picture of dorian gray", "oscar wilde", 288, "reading");
 addBook("fake book", "fake author", 560, "not read");
-const boosh = new Book("boosh", "noel fielding", 420, "read");
-//deleteBook(boosh);
+addBook('importance of being earnest', 'oscar wilde', 58, 'read');
+addBook('the postmortal', 'drew magary', 402, 'not read');
+addBook('twilight', 'stephenie meyer', 498, 'read');
 displayLibrary(library);
