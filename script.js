@@ -26,7 +26,7 @@ function Book(title, author, pages, readStatus) {
         return this.title.toLowerCase().includes(query.toLowerCase());
     }
 
-    /* checks if the title contains a given string (case-insensitive) */
+    /* checks if the author name contains a given string (case-insensitive) */
     this.authorContains = function(query) {
         return this.author.toLowerCase().includes(query.toLowerCase());
     }
@@ -189,6 +189,7 @@ closeModalBtn.addEventListener("click", () => {
     const addBookModal = document.querySelector("#add-book-modal");
     addBookModal.classList.remove("active");
     clearInputs();
+    clearErrs();
 })
 
 /* clear inputs in add book form */
@@ -202,20 +203,89 @@ function clearInputs() {
     creates new book with given inputs */
 const addBookForm = document.querySelector('#add-book-form');
 addBookForm.addEventListener("submit", (e) => {
-    const addBookModal = document.querySelector("#add-book-modal");
-    const title = document.querySelector('#form-title').value;
-    const author = document.querySelector('#form-author').value;
-    const pages = document.querySelector('#form-pages').value;
-    const readStatus = document.querySelector('#form-read-status').value;
+    if(validateForm()) {
+        const addBookModal = document.querySelector("#add-book-modal");
+        const title = document.querySelector('#form-title').value;
+        const author = document.querySelector('#form-author').value;
+        const pages = document.querySelector('#form-pages').value;
+        const readStatus = document.querySelector('#form-read-status').value;
+
+        /* add book to library */
+        addBook(title, author, pages, readStatus);
+
+        addBookModal.classList.remove("active");
+        clearInputs();
+        displayLibrary(library);
+    }
     e.preventDefault();
-
-    /* add book to library */
-    addBook(title, author, pages, readStatus);
-
-    addBookModal.classList.remove("active");
-    clearInputs();
-    displayLibrary(library);
 })
+
+/****** FORM VALIDATION ******/
+const form = document.getElementById('add-book-form');
+
+/* title validation */
+const title = document.getElementById('form-title');
+const titleErr = document.querySelector('#form-title + .form-err');
+title.addEventListener('input', () => {
+    if(title.validity.valueMissing) {
+        titleErr.textContent = "please enter a title";
+    } else {
+        titleErr.textContent = "";
+    }
+})
+
+/* title validation */
+const author = document.getElementById('form-author');
+const authorErr = document.querySelector('#form-author + .form-err');
+author.addEventListener('input', () => {
+    if(author.validity.valueMissing) {
+        authorErr.textContent = "please enter an author";
+    } else {
+        authorErr.textContent = "";
+    }
+})
+
+/* page validation */
+const pages = document.getElementById('form-pages');
+const pagesErr = document.querySelector('#form-pages + .form-err');
+pages.addEventListener('input', (event) => {
+    if(pages.validity.typeMismatch || pages.validity.valueMissing) {
+        pagesErr.textContent = "please enter a number";
+    } else {
+        pagesErr.textContent = "";
+    }
+})
+
+/* checks each input's validity:
+    - shows error messages where approprite
+    - returns true if valid, false otherwise
+*/
+function validateForm() {
+    if(!title.validity.valid || !author.validity.valid || !pages.validity.valid) {
+        showError();
+        return false;
+    }
+    return true;
+}
+
+function showError() {
+    if(!title.validity.valid) {
+        titleErr.textContent = "please enter a title";
+    }
+    if(!author.validity.valid) {
+        authorErr.textContent = "please enter an author";
+    }
+    if(!pages.validity.valid) {
+        pagesErr.textContent = "please enter page count";
+    }
+}
+
+function clearErrs() {
+    titleErr.textContent = "";
+    authorErr.textContent = "";
+    pagesErr.textContent = "";
+}
+
 
 /* testing */
 addBook("weapons of math destruction", "cathy o'neil", 274, "read");

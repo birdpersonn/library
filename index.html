@@ -27,24 +27,36 @@
       <div id="book-list" class="book-list"></div>
     </main>
     <section id="add-book-modal" class="add-book-modal">
-      <form id="add-book-form" class="add-book-form">
+      <form id="add-book-form" class="add-book-form" novalidate>
         <a id="modal-close-btn" class="modal-close-btn" href="#">X</a>
         <fieldset id="form-fieldset" class="form-fieldset">
-          <label for="title">title</label>
-          <input type="text" name="title" id="form-title" />
+          <label for="form-title">
+            <span>title:</span>
+            <input type="text" name="title" id="form-title" required />
+            <span class="form-err" aria-live="polite"></span>
+          </label>
 
-          <label for="author">author</label>
-          <input type="text" name="author" id="form-author" />
+          <label for="form-author">
+            <span>author:</span>
+            <input type="text" id="form-author" name="author" required />
+            <span class="form-err" aria-live="polite"></span>
+          </label>
 
-          <label for="pages">pages</label>
-          <input type="number" name="pages" id="form-pages" />
+          <label for="form-pages">
+            <span>pages:</span>
+            <input type="number" id="form-pages" name="pages" required />
+            <span class="form-err" aria-live="polite"></span>
+          </label>
 
-          <label for="read-status">status</label>
-          <select name="read-status" id="form-read-status">
-            <option value="read">read</option>
-            <option value="not read">not read</option>
-            <option value="reading">reading</option>
-          </select>
+          <label for="form-read-status">
+            <span>status:</span><br />
+            <select name="read-status" id="form-read-status">
+              <option value="read">read</option>
+              <option value="not read">not read</option>
+              <option value="reading">reading</option>
+            </select>
+            <span class="form-err" aria-live="polite"></span>
+          </label>
 
           <button id="form-submit-btn" class="form-submit-btn" type="submit">
             add book
